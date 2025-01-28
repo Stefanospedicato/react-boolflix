@@ -18,4 +18,6 @@ const MoviesSection = () => {
   );
 };
 
+//ok
+
 export default MoviesSection;
