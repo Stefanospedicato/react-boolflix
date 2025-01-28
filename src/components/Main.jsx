@@ -5,9 +5,11 @@ const Main = () => {
     <main>
       <div className="container">
         <div className="movies">
+          <h2>MOVIES</h2>
           <ResultSection />
         </div>
         <div className="series">
+          <h2>SERIE TV</h2>
           <ResultSection />
         </div>
       </div>

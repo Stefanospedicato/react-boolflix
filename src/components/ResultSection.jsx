@@ -10,7 +10,7 @@ const ResultSection = () => {
   }, []);
 
   return (
-    <div>
+    <div className="d-flex justify-content-center flex-wrap m-3 gap-1">
       {movies.map((movie) => (
         <Card movie={movie} />
       ))}
