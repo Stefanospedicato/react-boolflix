@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context/CardsContext";
 import { useEffect } from "react";
 import Card from "./Card";
 
-const ResultSection = () => {
+const MoviesSection = () => {
   const { filteredMovies, fetchMovies } = useGlobalContext();
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const ResultSection = () => {
   }, []);
 
   return (
-    <div className="flex-wrap d-flex justify-content-center">
+    <div className="movies-section flex-wrap d-flex justify-content-center">
       {filteredMovies.map((movie) => (
         <Card key={movie.id} movie={movie} />
       ))}
@@ -18,4 +18,4 @@ const ResultSection = () => {
   );
 };
 
-export default ResultSection;
+export default MoviesSection;

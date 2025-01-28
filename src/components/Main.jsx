@@ -1,16 +1,17 @@
-import ResultSection from "./ResultSection";
+import MovieSection from "./MovieSection";
+import SerieSection from "./SerieSection";
 
 const Main = () => {
   return (
     <main>
-      <div className="container">
-        <div className="movies">
-          <h2>MOVIES</h2>
-          <ResultSection />
+      <div className="container my-5">
+        <div className="my-3">
+          <h2 className="title">MOVIES: </h2>
+          <MovieSection />
         </div>
-        <div className="series">
-          <h2>SERIE TV</h2>
-          <ResultSection />
+        <div className="my-3">
+          <h2 className="title">SERIES: </h2>
+          <SerieSection />
         </div>
       </div>
     </main>

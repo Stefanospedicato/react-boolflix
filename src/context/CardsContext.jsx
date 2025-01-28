@@ -5,7 +5,9 @@ const CardsContext = createContext();
 
 const CardsProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
+  const [series, setSeries] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
+  const [filteredSeries, setFilteredSeries] = useState([]);
 
   const fetchMovies = (query = "") => {
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=253ed4ba34df710d4265508f7eccdabc&query=${query}`;
@@ -20,8 +22,30 @@ const CardsProvider = ({ children }) => {
       });
   };
 
+  const fetchSeries = (query = "") => {
+    const apiUrl = `https://api.themoviedb.org/3/search/tv?api_key=253ed4ba34df710d4265508f7eccdabc&query=${query}`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setSeries(res.data.results);
+        setFilteredSeries(res.data.results);
+      })
+      .catch((err) => {
+        console.error("Errore nel caricamento delle Serie TV", err);
+      });
+  };
+
   return (
-    <CardsContext.Provider value={{ movies, filteredMovies, fetchMovies }}>
+    <CardsContext.Provider
+      value={{
+        movies,
+        filteredMovies,
+        fetchMovies,
+        series,
+        fetchSeries,
+        filteredSeries,
+      }}
+    >
       {children}
     </CardsContext.Provider>
   );

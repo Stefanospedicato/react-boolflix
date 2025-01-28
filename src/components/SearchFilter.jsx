@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useGlobalContext } from "../context/CardsContext";
 
 const SearchFilter = () => {
-  const { fetchMovies } = useGlobalContext();
+  const { fetchMovies, fetchSeries } = useGlobalContext();
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
     const query = e.target.value;
     setSearchTerm(query);
     fetchMovies(query);
+    fetchSeries(query);
   };
 
   return (

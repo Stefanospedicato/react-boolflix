@@ -1,12 +1,28 @@
-const Card = ({ movie }) => {
+const Card = ({ movie, serie }) => {
   const {
-    id,
-    title,
-    original_title,
-    original_language,
-    vote_average,
-    poster_path,
-  } = movie;
+    id: movieId,
+    title: movieTitle,
+    original_title: movieOriginalTitle,
+    original_language: movieOriginalLanguage,
+    vote_average: movieVoteAverage,
+    poster_path: moviePosterPath,
+  } = movie || {};
+
+  const {
+    id: serieId,
+    title: serieTitle,
+    original_title: serieOriginalTitle,
+    original_language: serieOriginalLanguage,
+    vote_average: serieVoteAverage,
+    poster_path: seriePosterPath,
+  } = serie || {};
+
+  const id = movieId || serieId;
+  const title = movieTitle || serieTitle;
+  const original_title = movieOriginalTitle || serieOriginalTitle;
+  const original_language = movieOriginalLanguage || serieOriginalLanguage;
+  const vote_average = movieVoteAverage || serieVoteAverage;
+  const poster_path = moviePosterPath || seriePosterPath;
 
   return (
     <div key={id} className="card text-center">
@@ -26,7 +42,7 @@ const Card = ({ movie }) => {
       <div>{(parseInt(vote_average) / 2).toFixed()}</div>
       <div>
         <img
-          className="d-none poster"
+          className="poster"
           src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
           alt={title}
         />
