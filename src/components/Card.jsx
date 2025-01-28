@@ -1,11 +1,10 @@
-const Card = (props) => {
-  const { id, title, original_title, original_language, vote_average } =
-    props.movie;
+const Card = ({ movie }) => {
+  const { id, title, original_title, original_language, vote_average } = movie;
 
   return (
-    <div key={id} className="card text-center">
-      <h5>{title}</h5>
-      <h6>{original_title}</h6>
+    <div key={id} className="card">
+      <h4>{title}</h4>
+      <h5>{original_title}</h5>
       <div>{original_language}</div>
       <div>{vote_average}</div>
     </div>
