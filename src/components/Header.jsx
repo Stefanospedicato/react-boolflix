@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <div className="d-flex justify-content-between m-3">
+      <div className="d-flex justify-content-between">
         <div className="logo">LOGO</div>
         <div className="search">
           <div className="input-group mb-3">

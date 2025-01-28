@@ -1,11 +1,14 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
+import { CardsProvider } from "./context/CardsContext";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Main />
+      <CardsProvider>
+        <Header />
+        <Main />
+      </CardsProvider>
     </>
   );
 };
