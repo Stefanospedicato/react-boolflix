@@ -2,3 +2,9 @@ header{
   height: 90px;
   background-color: gray;
 }
+
+.card{
+  border: 2px solid black;
+  align-items: center;
+  padding: 20px;
+}

@@ -1,7 +1,16 @@
+import ResultSection from "./ResultSection";
+
 const Main = () => {
   return (
     <main>
-      <div className="container">CARDS</div>
+      <div className="container">
+        <div className="movies">
+          <ResultSection />
+        </div>
+        <div className="series">
+          <ResultSection />
+        </div>
+      </div>
     </main>
   );
 };
