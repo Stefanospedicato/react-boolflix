@@ -4,13 +4,11 @@ import axios from "axios";
 const CardsContext = createContext();
 
 const CardsProvider = ({ children }) => {
-  const apiUrl =
-    "https://api.themoviedb.org/3/search/movie?api_key=253ed4ba34df710d4265508f7eccdabc&query=matrix";
-
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
 
-  const fetchMovies = () => {
+  const fetchMovies = (query = "") => {
+    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=253ed4ba34df710d4265508f7eccdabc&query=${query}`;
     axios
       .get(apiUrl)
       .then((res) => {
@@ -18,21 +16,12 @@ const CardsProvider = ({ children }) => {
         setFilteredMovies(res.data.results);
       })
       .catch((err) => {
-        console.error("Errore", err);
+        console.error("Errore nel caricamento dei film", err);
       });
   };
 
-  const handleSearch = (title) => {
-    const filtered = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(title.toLowerCase())
-    );
-    setFilteredMovies(filtered);
-  };
-
   return (
-    <CardsContext.Provider
-      value={{ movies, filteredMovies, fetchMovies, handleSearch }}
-    >
+    <CardsContext.Provider value={{ movies, filteredMovies, fetchMovies }}>
       {children}
     </CardsContext.Provider>
   );

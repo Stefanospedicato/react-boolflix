@@ -10,7 +10,7 @@ const ResultSection = () => {
   }, []);
 
   return (
-    <div className="d-flex justify-content-between flex-wrap">
+    <div className="flex-wrap d-flex justify-content-center">
       {filteredMovies.map((movie) => (
         <Card key={movie.id} movie={movie} />
       ))}
