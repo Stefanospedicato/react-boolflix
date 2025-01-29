@@ -8,8 +8,24 @@ header{
   }
 }
 
+main{
+  height: 100%;
+  background-color: black;
+  position: relative;
+  top: -16px;
+   .movies-section{
+    padding-top: 50px;
+    padding-bottom: 20px;
+   }
+   
+   .series-section{
+    padding-top: 50px;
+  }
+}
+
+
+
 .card{
-  border-radius: 15px;
   align-items: center;
   padding: 20px;
   width: calc(100% / 6);
@@ -17,16 +33,16 @@ header{
   position: relative;
   background-color: black;
   color: white;
-  margin: 20px;
+  margin: 3px;
+  margin-bottom: 8px;
   cursor: pointer;
-
+  
   img.poster{
     width: 220px;
     height: 305px;
     position: absolute;
     top: -1px;
-    left: -4px;
-    border-radius: 15px;
+    left: -1px;
     transition: opacity 0.3s ease;
 
     &:hover{
@@ -43,14 +59,24 @@ img.flag{
 
 .title{
   font-weight: bold;
-  color: red;
+  color: whitesmoke;
 }
 
 .description{
   height: 120px;
   overflow: auto;
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
 .card-title{
   color: rgb(225, 0, 0) ;
+}
+.card-subtitle{
+  font-size: 0.8rem;
+  margin: 10px;
+}
+
+.fa-solid.fa-star{
+  color: gold;
 }

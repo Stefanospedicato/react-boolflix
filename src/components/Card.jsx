@@ -44,7 +44,7 @@ const Card = ({ movie, serie }) => {
   return (
     <div key={id} className="card text-center">
       <h5 className="card-title">{title}</h5>
-      <h6 className="card-subtitle">{original_title}</h6>
+      <p className="card-subtitle">{original_title}</p>
       <div>
         {original_language === "it" && (
           <img className="flag" src="../../public/italia.png" alt="italy" />
@@ -58,7 +58,7 @@ const Card = ({ movie, serie }) => {
       </div>
       <div>{printStars()}</div>
       <div className="description">Descrizione: {overview}</div>
-      <div>
+      <div className="poster-container">
         <img
           className="poster"
           src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
