@@ -43,7 +43,7 @@ const Card = ({ movie, serie }) => {
 
   return (
     <div key={id} className="card text-center">
-      <h5 className="card-title">{title}</h5>
+      <h6 className="card-title">{title}</h6>
       <p className="card-subtitle">{original_title}</p>
       <div>
         {original_language === "it" && (
@@ -57,7 +57,9 @@ const Card = ({ movie, serie }) => {
           original_language.toUpperCase()}
       </div>
       <div>{printStars()}</div>
-      <div className="description">Descrizione: {overview}</div>
+      <div className="description">
+        <strong>Descrizione:</strong> {overview}
+      </div>
       <div className="poster-container">
         <img
           className="poster"
