@@ -6,15 +6,17 @@ const Card = ({ movie, serie }) => {
     original_language: movieOriginalLanguage,
     vote_average: movieVoteAverage,
     poster_path: moviePosterPath,
+    overview: movieOverview,
   } = movie || {};
 
   const {
     id: serieId,
-    title: serieTitle,
-    original_title: serieOriginalTitle,
+    name: serieTitle,
+    original_name: serieOriginalTitle,
     original_language: serieOriginalLanguage,
     vote_average: serieVoteAverage,
     poster_path: seriePosterPath,
+    overview: serieOverview,
   } = serie || {};
 
   const id = movieId || serieId;
@@ -23,23 +25,39 @@ const Card = ({ movie, serie }) => {
   const original_language = movieOriginalLanguage || serieOriginalLanguage;
   const vote_average = movieVoteAverage || serieVoteAverage;
   const poster_path = moviePosterPath || seriePosterPath;
+  const overview = movieOverview || serieOverview;
+
+  const fullStars = Math.floor(vote_average / 2);
+  const emptyStars = 5 - fullStars;
+
+  const printStars = () => {
+    const stars = [];
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<i className="fa-solid fa-star"></i>);
+    }
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<i className="fa-regular fa-star"></i>);
+    }
+    return stars;
+  };
 
   return (
     <div key={id} className="card text-center">
-      <h5>{title}</h5>
-      <h6>{original_title}</h6>
+      <h5 className="card-title">{title}</h5>
+      <h6 className="card-subtitle">{original_title}</h6>
       <div>
         {original_language === "it" && (
-          <img className="flag" src="../../public/italy.jpg" alt="italy" />
+          <img className="flag" src="../../public/italia.png" alt="italy" />
         )}
         {original_language === "en" && (
-          <img className="flag" src="../../public/uk.png" alt="uk" />
+          <img className="flag" src="../../public/england-uk.png" alt="uk" />
         )}
         {original_language !== "it" &&
           original_language !== "en" &&
           original_language.toUpperCase()}
       </div>
-      <div>{(parseInt(vote_average) / 2).toFixed()}</div>
+      <div>{printStars()}</div>
+      <div className="description">Descrizione: {overview}</div>
       <div>
         <img
           className="poster"

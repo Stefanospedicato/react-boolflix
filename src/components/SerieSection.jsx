@@ -10,11 +10,14 @@ const SeriesSection = () => {
   }, []);
 
   return (
-    <div className="series-section flex-wrap d-flex justify-content-center">
-      {filteredSeries.map((serie) => (
-        <Card key={serie.id} serie={serie} />
-      ))}
-    </div>
+    <>
+      <h2 className="title text-center">SERIES </h2>
+      <div className="series-section flex-wrap d-flex justify-content-center">
+        {filteredSeries.map((serie) => (
+          <Card key={serie.id} serie={serie} />
+        ))}
+      </div>
+    </>
   );
 };
 

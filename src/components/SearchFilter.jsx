@@ -24,9 +24,6 @@ const SearchFilter = () => {
           value={searchTerm}
           onChange={handleInputChange}
         />
-        <button className="btn btn-danger" type="button" id="button-addon1">
-          CERCA
-        </button>
       </div>
     </div>
   );

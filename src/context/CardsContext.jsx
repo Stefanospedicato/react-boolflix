@@ -35,19 +35,17 @@ const CardsProvider = ({ children }) => {
       });
   };
 
+  const value = {
+    movies,
+    filteredMovies,
+    fetchMovies,
+    series,
+    fetchSeries,
+    filteredSeries,
+  };
+
   return (
-    <CardsContext.Provider
-      value={{
-        movies,
-        filteredMovies,
-        fetchMovies,
-        series,
-        fetchSeries,
-        filteredSeries,
-      }}
-    >
-      {children}
-    </CardsContext.Provider>
+    <CardsContext.Provider value={value}>{children}</CardsContext.Provider>
   );
 };
 
