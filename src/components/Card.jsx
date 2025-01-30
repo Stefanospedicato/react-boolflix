@@ -27,16 +27,15 @@ const Card = ({ movie, serie }) => {
   const poster_path = moviePosterPath || seriePosterPath;
   const overview = movieOverview || serieOverview;
 
-  const fullStars = Math.floor(vote_average / 2);
-  const emptyStars = 5 - fullStars;
-
   const printStars = () => {
+    const fullStars = Math.floor(vote_average / 2);
+    const emptyStars = 5 - fullStars;
     const stars = [];
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<i className="fa-solid fa-star"></i>);
+      stars.push(<i key={`solid-${i}`} className="fa-solid fa-star"></i>);
     }
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<i className="fa-regular fa-star"></i>);
+      stars.push(<i key={`reg-${i}`} className="fa-regular fa-star"></i>);
     }
     return stars;
   };
