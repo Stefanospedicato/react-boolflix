@@ -13,7 +13,7 @@ const MoviesSection = () => {
     <>
       {filteredMovies.length > 0 ? (
         <>
-          <h2 className="title text-center movies-section ">MOVIES </h2>
+          <h2 className="title movies-section ">Se stavi cercando un film: </h2>
           <div className="movies-section flex-wrap d-flex justify-content-center">
             {filteredMovies.map((movie) => (
               <Card key={movie.id} movie={movie} />

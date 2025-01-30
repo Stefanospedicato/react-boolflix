@@ -13,7 +13,7 @@ const SeriesSection = () => {
     <>
       {filteredSeries.length > 0 ? (
         <>
-          <h2 className="title text-center movies-section ">SERIES </h2>
+          <h2 className="title movies-section ">Preferivi una serie TV? :</h2>
           <div className="series-section flex-wrap d-flex justify-content-center">
             {filteredSeries.map((serie) => (
               <Card key={serie.id} serie={serie} />

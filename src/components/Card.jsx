@@ -43,23 +43,6 @@ const Card = ({ movie, serie }) => {
 
   return (
     <div key={id} className="card text-center">
-      <h6 className="card-title">{title}</h6>
-      <p className="card-subtitle">{original_title}</p>
-      <div>
-        {original_language === "it" && (
-          <img className="flag" src="../../public/italia.png" alt="italy" />
-        )}
-        {original_language === "en" && (
-          <img className="flag" src="../../public/england-uk.png" alt="uk" />
-        )}
-        {original_language !== "it" &&
-          original_language !== "en" &&
-          original_language.toUpperCase()}
-      </div>
-      <div>{printStars()}</div>
-      <div className="description">
-        <strong>Descrizione:</strong> {overview}
-      </div>
       <div className="poster-container">
         {poster_path ? (
           <img
@@ -74,6 +57,25 @@ const Card = ({ movie, serie }) => {
             alt={title}
           />
         )}
+      </div>
+      <div className="content">
+        <h6 className="card-title">{title}</h6>
+        <p className="card-subtitle">{original_title}</p>
+        <div>
+          {original_language === "it" && (
+            <img className="flag" src="../../public/italia.png" alt="italy" />
+          )}
+          {original_language === "en" && (
+            <img className="flag" src="../../public/england-uk.png" alt="uk" />
+          )}
+          {original_language !== "it" &&
+            original_language !== "en" &&
+            original_language.toUpperCase()}
+        </div>
+        <div>{printStars()}</div>
+        <div className="description">
+          <strong>Descrizione:</strong> {overview}
+        </div>
       </div>
     </div>
   );
